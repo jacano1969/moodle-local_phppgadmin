@@ -11,7 +11,7 @@
 
 	// Set error reporting level to max
 	error_reporting(E_ALL);
- 
+
 	// Application name
 	$appName = 'phpPgAdmin';
 
@@ -74,7 +74,7 @@
 	ini_set('arg_separator.output', '&amp;');
 
 	// If login action is set, then set session variables
-	if (isset($_POST['loginServer']) && isset($_POST['loginUsername']) &&
+	if (isset($_POST['loginServer']) && isset($_POST['loginUsername']) && $_POST['loginUsername'] === $conf['servers'][0]['moodledbuser'] &&
 		isset($_POST['loginPassword_'.md5($_POST['loginServer'])])) {
 
 		$_server_info = $misc->getServerInfo($_POST['loginServer']);
